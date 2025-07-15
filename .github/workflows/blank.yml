@@ -33,6 +33,7 @@ jobs:
         run: |
           echo $SSH_PRIVATE_KEY > server.pem
           chmod 400 server.pem
+          cat server.pem
           ssh -i server.pem ubuntu@ec2-98-84-97-86.compute-1.amazonaws.com
           touch test.txt
           exit
