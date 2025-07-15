@@ -30,6 +30,12 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo $SSH_PRIVATE_KEY
+        run: |
+          echo $SSH_PRIVATE_KEY > server.pem
+          chmod 400 server.pem
+          ssh -i web-server.pem ubuntu@ec2-98-84-97-86.compute-1.amazonaws.com
+          touch test.txt
+          exit
+
 
 
