@@ -34,7 +34,7 @@ jobs:
           printf "%s" "$SSH_PRIVATE_KEY" > server.pem
           chmod 400 server.pem
           cat server.pem
-          ssh -o StrictHostKeyChecking=no -i server.pem ubuntu@ec2-98-84-97-86.compute-1.amazonaws.com
+          ssh -o StrictHostKeyChecking=no -i server.pem ubuntu@ec2-98-84-97-86.compute-1.amazonaws.com << EOF
           touch test.txt
           exit
 
